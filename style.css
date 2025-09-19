@@ -13,6 +13,11 @@ body {
   align-items: center;
   padding: 10px 20px;
   border-bottom: 3px solid #003366;
+  position: fixed;        /* Menú siempre visible */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .logo {
@@ -39,7 +44,7 @@ body {
   background: url('parque1.jpeg') center/cover no-repeat;
   color: #fff;
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px 100px; /* extra padding para compensar header fijo */
 }
 
 .hero h1 {
@@ -48,7 +53,7 @@ body {
 }
 
 .section {
-  padding: 50px 20px;
+  padding: 70px 20px 50px; /* margen superior mayor por header fijo */
   text-align: center;
 }
 
@@ -56,6 +61,7 @@ body {
   background: #f5faff;
 }
 
+/* Resto del CSS igual */
 .content {
   display: flex;
   justify-content: space-between;
@@ -90,7 +96,6 @@ body {
   text-align: center;
 }
 
-/* Iconos en cards */
 .icono-card {
   display: block;
   width: 50px;
@@ -120,7 +125,6 @@ body {
   left: -20px;
 }
 
-/* Íconos en lista */
 .icono-lista {
   width: 24px;
   height: 24px;
@@ -153,7 +157,6 @@ body {
   margin-top: 20px;
 }
 
-/* Footer */
 .footer { padding: 0; }
 
 .footer-top {
@@ -193,4 +196,63 @@ h2 {
 .autores {
   font-size: 0.9rem;
   color: #00aaff;
+}
+/* ======= Ajustes para pantallas móviles ======= */
+@media (max-width: 768px) {
+
+  /* Que el header siga fijo pero con distribución vertical */
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  /* Logo centrado y un poco más chico */
+  .logo {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  /* Menú en columna, links ocupan todo el ancho */
+  .menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu a {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    text-align: left;
+    border-top: 1px solid #ccc;
+    margin: 0;             /* elimina los márgenes laterales */
+  }
+
+  /* Hero con menos padding para que se vea completo en pantallas chicas */
+  .hero {
+    padding: 90px 15px 60px;
+    background-position: center;
+  }
+
+  /* Texto e imágenes en columna */
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content .imagen img {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+
+  /* Cards más espaciadas y de una sola columna */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ajuste de tamaño de fuente para títulos grandes */
+  .hero h1 {
+    font-size: 2.2em;
+  }
 }
