@@ -256,3 +256,17 @@ h2 {
     font-size: 2.2em;
   }
 }
+/* ===== Ajuste de tamaño del menú solo en pantallas chicas ===== */
+@media (max-width: 768px) {
+
+  /* Links del menú más grandes y con más espacio táctil */
+  .menu a {
+    font-size: 1.2rem;   /* antes era el valor heredado (~1rem) */
+    padding: 16px;       /* más alto para que sea fácil de tocar */
+  }
+
+  /* Si querés que todo el bloque de menú tenga un poco más de separación */
+  .menu {
+    gap: 4px;            /* opcional: espacio entre cada link */
+  }
+}
