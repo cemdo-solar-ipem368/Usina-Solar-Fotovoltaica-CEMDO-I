@@ -9,6 +9,8 @@
 <!-- Header -->
 <header class="header">
   <img alt="Logo CEMDO" class="logo" src="logocemdo.jpg"/>
+  <!-- Botón hamburguesa solo móvil -->
+  <button class="menu-toggle" aria-label="Abrir menú">☰</button>
   <nav class="menu">
     <a href="#inicio">Inicio</a>
     <a href="#proyecto">Sobre el Proyecto</a>
@@ -130,5 +132,12 @@
   </div>
   <p class="autores">Autores: Alumnos: MATEO VALENTÍN ALTAMIRANO, RENZO LÓPEZ CARRANZA, ANTONIO EBER ARON ORTIZ, VALENTINO NICOLÁS PÉREZ | Docente coordinador: Profesor Lisandro García</p>
 </footer>
+
+<!-- Script del menú -->
+<script>
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+  document.querySelector('.header').classList.toggle('open');
+});
+</script>
 </body>
 </html>
